@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormularioTest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Noto+Sans+Mono:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <div id="Cuerpo">
+        <div id="Title">
+            Testing
+        </div>
+        <div id="Formulario">
+            <form id="Form" method="post" enctype="multipart/form-data">
+                <fieldset id="Dname" class="Dclave">
+                    <legend class="Dtext">Ingresa tu nombre</legend>
+                    <input id="Name" type="text" name="Name">
+                </fieldset>
+                <div id="Errorname" class="Errortext">Debe ser entre 3 y 30 caracteres.</div>
+                <fieldset id="Dcorreo" class="Dclave">
+                    <legend class="Dtext">Ingresa tu correo</legend>
+                    <input id="Correo" type="text" name="Correo">
+                </fieldset>
+                <div id="Errorcorreo" class="Errortext">Correo no valido.</div>
+                <fieldset id="Dpass" class="Dclave">
+                    <legend class="Dtext">Ingresa tu contraseña</legend>
+                    <input id="Pass" type="text" name="Pass">
+                </fieldset>
+                <div id="Errorpass" class="Errortext">La contraseña debe ser de minimo 8 caracteres y poseer un numero.</div>
+                <fieldset id="Dpass2" class="Dclave">
+                    <legend class="Dtext">Confirma tu contraseña</legend>
+                    <input id="Pass2" type="text" name="Pass2">
+                </fieldset>
+                <div id="Errorpass2" class="Errortext">La contraseña no coincide.</div>
+                <fieldset id="Dclave" class="Dclave">
+                    <legend class="Dtext">Ingresa tu clave</legend>
+                    <input id="Clave" type="text" name="Clave">
+                </fieldset>
+                <div class="Errortext" id="Errortext">Caracteres que debe tener la clave: <div id="p16">16.</div><div id="p24">24.</div><div id="p32">32.</div></div>
+                <div id="Dtipos" class="Margin">
+                    <p>¿Qué tipo de AES quieres utilizar?</p>
+                    <label for="Tipo1" class="Lradio">
+                        <input type="radio" value="128" name="Tipo" id="Tipo1" class="Radio" onchange="SelectionType();" checked> 
+                        <div class="Radio_radio"></div>    
+                        128
+                    </label>
+                    <label for="Tipo2" class="Lradio">
+                        <input type="radio" value="192" name="Tipo" id="Tipo2" class="Radio" onchange="SelectionType();">
+                        <div class="Radio_radio"></div>
+                        192
+                    </label>
+                    <label for="Tipo3" class="Lradio">
+                        <input type="radio" value="256" name="Tipo" id="Tipo3" class="Radio" onchange="SelectionType();">
+                        <div class="Radio_radio"></div>
+                        256
+                    </label>
+                </div>
+                </form>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+        <script src="js/aes.js"></script>
+        <script src="js/css.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </div>
+</body>
+</html>
