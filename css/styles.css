@@ -84,7 +84,7 @@ body{
     width: 25em;
     border: 1px solid #1ABC9C ;
     border-radius: 6px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 .Dclave:focus-within{
     border-color: #1ABC9C;
@@ -219,9 +219,15 @@ body{
 .Errortext{
     float: left;
     display: none;
-    width: 17rem;
+    width: 22rem;
     margin-left: 2rem;
-    margin-top: .5rem;
+    color: red;
+}
+.Errortext2{
+    float: left;
+    display: none;
+    width: 17.5rem;
+    margin-left: 2rem;
     color: red;
 }
 #p16{
