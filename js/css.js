@@ -5,7 +5,7 @@ const clave2 = /^[^><]{24}$/
 const clave3 = /^[^><]{32}$/
 const name = /^[^><1-9\W]{3,30}$/
 const correo = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
-const pass = /^[^><]{3,32}$/
+const pass = /^[^><][1-9a-zA-Z]*[1-9a-zA-Z]{8,32}$/
 var estandar =/^[^><]{16}$/
 const text = /^[^<>]*$/
 
@@ -42,16 +42,39 @@ const validar = (e)=>{
     console.log(e.target.name);
     switch(e.target.name){
         case "Name":
+            if(name.test(e.target.value)||e.target.value==undefined){
+                document.getElementById("Errorname").style.display="none";
             
+                }else{
+                document.getElementById("Errorname").style.display="block";
+                }
         break;
         case "Correo":
-
+            if(correo.test(e.target.value)||e.target.value==undefined){
+                document.getElementById("Errorcorreo").style.display="none";
+            
+                }else{
+                document.getElementById("Errorcorreo").style.display="block";
+            
+                }
         break;
         case "Pass":
-
+            if(pass.test(e.target.value)||e.target.value==undefined){
+                document.getElementById("Errorpass").style.display="none";
+            
+                }else{
+                document.getElementById("Errorpass").style.display="block";
+            
+                }
         break;
         case "Pass2":
-
+            if(e.target.value==document.getElementById("Pass").value||e.target.value==undefined){
+                document.getElementById("Errorpass2").style.display="none";
+            
+                }else{
+                document.getElementById("Errorpass2").style.display="block";
+            
+                }
         break;
         default:
             if(estandar.test(e.target.value)||e.target.value==undefined){
