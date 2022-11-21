@@ -3,9 +3,9 @@ const inputs = document.querySelectorAll('#Form input');
 const clave1 = /^[^><]{16}$/
 const clave2 = /^[^><]{24}$/
 const clave3 = /^[^><]{32}$/
-const name = /^[^><1-9\W]{3,30}$/
+const name = /^[^><1-9\W]+$/
 const correo = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
-const pass = /^[^><][1-9a-zA-Z]*[1-9a-zA-Z]{8,32}$/
+const pass = /^[^><]+$/
 var estandar =/^[^><]{16}$/
 const text = /^[^<>]*$/
 
@@ -43,11 +43,28 @@ const validar = (e)=>{
     switch(e.target.name){
         case "Name":
             if(name.test(e.target.value)||e.target.value==undefined){
-                document.getElementById("Errorname").style.display="none";
-            
+                document.getElementById("ErrornameC").style.display="none";
+                    if(e.target.value.length<3){
+                        document.getElementById("Errorname-").style.display="block";
+                        
+                        }else{
+                            if(e.target.value.length>30){
+                                document.getElementById("Errorname+").style.display="block";
+                            }else{
+                                document.getElementById("Errorname+").style.display="none";
+                            }
+                        document.getElementById("Errorname-").style.display="none";
+                        }
+            }else{
+                if(e.target.value.length==0){
+                    document.getElementById("Errorname-").style.display="block";
+                    document.getElementById("ErrornameC").style.display="none";
                 }else{
-                document.getElementById("Errorname").style.display="block";
+                    document.getElementById("ErrornameC").style.display="block";
+                    document.getElementById("Errorname-").style.display="none";            
                 }
+            }
+            
         break;
         case "Correo":
             if(correo.test(e.target.value)||e.target.value==undefined){
@@ -59,13 +76,28 @@ const validar = (e)=>{
                 }
         break;
         case "Pass":
-            if(pass.test(e.target.value)||e.target.value==undefined){
-                document.getElementById("Errorpass").style.display="none";
-            
+            if(pass.test(e.target.value)){
+                document.getElementById("ErrorpassC").style.display="none";
+                if(e.target.value.length<7){
+                    document.getElementById("Errorpass-").style.display="block";
+                    
+                    }else{
+                        if(e.target.value.length>32){
+                            document.getElementById("Errorpass+").style.display="block";
+                        }else{
+                            document.getElementById("Errorpass+").style.display="none";
+                        }
+                    document.getElementById("Errorpass-").style.display="none";
+                    }
+            }else{
+                if(e.target.value.length==0){
+                    document.getElementById("Errorpass-").style.display="block";
+                    document.getElementById("ErrorpassC").style.display="none";
                 }else{
-                document.getElementById("Errorpass").style.display="block";
-            
+                    document.getElementById("ErrorpassC").style.display="block";
+                    document.getElementById("Errorpass-").style.display="none";            
                 }
+            }
         break;
         case "Pass2":
             if(e.target.value==document.getElementById("Pass").value||e.target.value==undefined){

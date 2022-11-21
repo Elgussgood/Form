@@ -22,7 +22,10 @@
                     <legend class="Dtext">Ingresa tu nombre</legend>
                     <input id="Name" type="text" name="Name">
                 </fieldset>
-                <div id="Errorname" class="Errortext">Debe ser entre 3 y 30 caracteres.</div><br>
+                <div id="ErrornameC" class="Errortext">El nombre no puede tener caracteres especiales.</div>
+                <div id="Errorname+" class="Errortext">El nombre no puede tener mas de 30 caracteres.</div>
+                <div id="Errorname-" class="Errortext">El nombre debe tener minimo 3 caracteres.</div>
+                <br>
                 <fieldset id="Dcorreo" class="Dclave">
                     <legend class="Dtext">Ingresa tu correo</legend>
                     <input id="Correo" type="text" name="Correo">
@@ -32,7 +35,11 @@
                     <legend class="Dtext">Ingresa tu contraseña</legend>
                     <input id="Pass" type="password" name="Pass">
                 </fieldset>
-                <div id="Errorpass" class="Errortext">La contraseña debe ser de minimo 8 caracteres</div><br>
+                <div id="ErrorpassN" class="Errortext">La contraseña no es opcional</div>
+                <div id="ErrorpassC" class="Errortext">La contraseña no puede tener ">" ni "<" </div>
+                <div id="Errorpass+" class="Errortext">La contraseña debe ser menor de 32 caracteres</div>
+                <div id="Errorpass-" class="Errortext">La contraseña debe ser de minimo 8 caracteres</div>
+                <br>
                 <fieldset id="Dpass2" class="Dclave">
                     <legend class="Dtext">Confirma tu contraseña</legend>
                     <input id="Pass2" type="password" name="Pass2">
